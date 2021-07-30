@@ -165,9 +165,6 @@ services:
       - LINK_CONTRACT_ADDRESS
     env_file:
       - ./settings/chainlink-variables.env
-    ports:
-      - 6711:6688
-      - "6060:6060"
     secrets:
       - node_password
       - apicredentials
