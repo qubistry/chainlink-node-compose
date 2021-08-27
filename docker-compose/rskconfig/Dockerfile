@@ -15,19 +15,7 @@ WORKDIR /home/rskj
 
 USER rsk
 
-RUN git clone https://github.com/rsksmart/rskj.git . && \
-    git remote add upstream https://github.com/rsksmart/rskj.git && \
-    git fetch upstream pull/1576/head:pr1576 && \
-    git fetch upstream pull/1588/head:pr1588 && \
-    git fetch upstream pull/1589/head:pr1589 && \
-    git checkout -b cl_test master
-
-RUN git config --global user.email "user@email" && \
-    git config --global user.name "user"
-
-RUN git merge pr1576 --no-edit && \
-    git merge pr1588 --no-edit && \
-    git merge pr1589 --no-edit
+RUN git clone https://github.com/rsksmart/rskj.git .
 
 COPY ./rsk-dev.json rskj-core/src/main/resources/genesis/
 
